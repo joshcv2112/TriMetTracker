@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Route extends Component {
+class TransitRoutes extends Component {
 
     state = {
         loading: true,
@@ -13,9 +13,7 @@ class Route extends Component {
         const data = await response.json();
         const routeList = [];
         data.resultSet.route.forEach(element => routeList.push(element));
-        //data.resultSet.route.forEach(element => routeDescList.push(element.desc));
         this.setState({route: data.resultSet.route[0], routeList: routeList, loading: false});
-        console.log(this.state.routeList);
     }
 
     createTable = () => {
@@ -44,4 +42,4 @@ class Route extends Component {
     }
 }
 
- export default Route;
+ export default TransitRoutes;

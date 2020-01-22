@@ -22,3 +22,21 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(209, 240, 255);
+  color: black;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;  
+}
+
