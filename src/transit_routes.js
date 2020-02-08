@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DropdownExampleSearchSelection from './route_options';
 
 class TransitRoutes extends Component {
 
@@ -20,7 +21,7 @@ class TransitRoutes extends Component {
     createMAXTable = () => {
         let table  = [];
         for (let i = 0; i < this.state.routeList.length; i++) {
-            if (this.state.routeList[i].type == "R")
+            if (this.state.routeList[i].type === "R")
                 table.push(<li key={i}>{this.state.routeList[i].desc}</li>);
         }
         return table;
@@ -29,7 +30,7 @@ class TransitRoutes extends Component {
     createBusTable = () => {
         let table  = [];
         for (let i = 0; i < this.state.routeList.length; i++) {
-            if (this.state.routeList[i].type == "B")
+            if (this.state.routeList[i].type === "B")
                 table.push(<li key={i}>{this.state.routeList[i].desc}</li>);
         }
         return table;
@@ -38,6 +39,10 @@ class TransitRoutes extends Component {
     render(){
         return(
                 <div>
+                    <div>
+                        <DropdownExampleSearchSelection />
+                    </div>
+                    <div>
                     {this.state.loading || !this.state.route ? (
                         <p>LOADING . . .</p>
                     ) : (
@@ -56,6 +61,7 @@ class TransitRoutes extends Component {
                             </div>
                         </div>
                     )}
+                    </div>
                 </div>
         );
     }
